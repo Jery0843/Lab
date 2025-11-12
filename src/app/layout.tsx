@@ -106,13 +106,14 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
+
       <body
         className={`${orbitron.variable} ${firaCode.variable} ${righteous.variable} antialiased min-h-screen flex flex-col`}
       >
         {/* Neural Aurora Background */}
         <NeuralAuroraBackground density={0.24} speed={0.9} trailAlpha={0.07} />
 
-        {/* Google AdSense global script */}
+        {/* Load AdSense globally once */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5661675622272159"
@@ -120,45 +121,7 @@ export default function RootLayout({
           strategy="lazyOnload"
         />
 
-        {/* === Display Ad (Auto Responsive) === */}
-        <div className="my-6 mx-auto w-full flex justify-center">
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block" }}
-            data-ad-client="ca-pub-5661675622272159"
-            data-ad-slot="2973753515"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          ></ins>
-          <Script
-            id="adsbygoogle-display-init"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `(adsbygoogle = window.adsbygoogle || []).push({});`,
-            }}
-          />
-        </div>
-
-        {/* === In-Article Ad (Fluid Format) === */}
-        <div className="my-6 mx-auto w-full flex justify-center">
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block", textAlign: "center" }}
-            data-ad-layout="in-article"
-            data-ad-format="fluid"
-            data-ad-client="ca-pub-5661675622272159"
-            data-ad-slot="5832685293"
-          ></ins>
-          <Script
-            id="adsbygoogle-article-init"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `(adsbygoogle = window.adsbygoogle || []).push({});`,
-            }}
-          />
-        </div>
-
-        {/* Analytics - Umami */}
+        {/* Umami Analytics */}
         <Script
           src="https://cloud.umami.is/script.js"
           data-website-id="f6696075-8457-4c24-b1f4-32665790a4d0"
@@ -193,7 +156,46 @@ export default function RootLayout({
           }}
         />
 
+        {/* Main Site Content (includes header, pages, etc.) */}
         <RootLayoutContent>{children}</RootLayoutContent>
+
+        {/* === Display Ad (Auto Responsive) === */}
+        <div className="my-6 mx-auto w-full flex justify-center">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block", margin: "0", padding: "0" }}
+            data-ad-client="ca-pub-5661675622272159"
+            data-ad-slot="2973753515"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+          <Script
+            id="adsbygoogle-display-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `(adsbygoogle = window.adsbygoogle || []).push({});`,
+            }}
+          />
+        </div>
+
+        {/* === In-Article Ad (Fluid Format) === */}
+        <div className="my-6 mx-auto w-full flex justify-center">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block", textAlign: "center", margin: "0", padding: "0" }}
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client="ca-pub-5661675622272159"
+            data-ad-slot="5832685293"
+          ></ins>
+          <Script
+            id="adsbygoogle-article-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `(adsbygoogle = window.adsbygoogle || []).push({});`,
+            }}
+          />
+        </div>
       </body>
     </html>
   );
