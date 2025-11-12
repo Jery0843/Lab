@@ -881,3 +881,32 @@ input:focus, select:focus, button:focus {
     transform: translateY(0);
   }
 }
+/* === AdSense Normalization & Spacing Fix === */
+
+.adsbygoogle {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  line-height: 0 !important;
+}
+
+.ads-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}
+
+.ads-container:empty {
+  display: none !important;
+}
+
+/* Ensure no space before or after ads near footer */
+.ads-container + footer,
+footer + .ads-container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
