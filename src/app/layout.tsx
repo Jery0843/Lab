@@ -124,18 +124,7 @@ export default function RootLayout({
   data-domains="0xjerry.jerome.co.in"
   strategy="afterInteractive"
 />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5661675622272159"
-     crossorigin="anonymous"></script>
-<!-- Display1 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-5661675622272159"
-     data-ad-slot="2973753515"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+        
         
         {/* Ko-fi Widget */}
         <Script
