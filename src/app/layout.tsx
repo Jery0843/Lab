@@ -113,7 +113,7 @@ export default function RootLayout({
         {/* Neural Aurora Background */}
         <NeuralAuroraBackground density={0.24} speed={0.9} trailAlpha={0.07} />
 
-        {/* Load AdSense globally once */}
+        {/* Google AdSense (load once) */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5661675622272159"
@@ -156,11 +156,11 @@ export default function RootLayout({
           }}
         />
 
-        {/* Main Site Content (includes header, pages, etc.) */}
+        {/* Main Content (includes header + footer) */}
         <RootLayoutContent>{children}</RootLayoutContent>
 
         {/* === Display Ad (Auto Responsive) === */}
-        <div className="my-6 mx-auto w-full flex justify-center">
+        <div className="ads-container my-6 mx-auto w-full flex justify-center">
           <ins
             className="adsbygoogle"
             style={{ display: "block", margin: "0", padding: "0" }}
@@ -179,10 +179,15 @@ export default function RootLayout({
         </div>
 
         {/* === In-Article Ad (Fluid Format) === */}
-        <div className="my-6 mx-auto w-full flex justify-center">
+        <div className="ads-container my-6 mx-auto w-full flex justify-center">
           <ins
             className="adsbygoogle"
-            style={{ display: "block", textAlign: "center", margin: "0", padding: "0" }}
+            style={{
+              display: "block",
+              textAlign: "center",
+              margin: "0",
+              padding: "0",
+            }}
             data-ad-layout="in-article"
             data-ad-format="fluid"
             data-ad-client="ca-pub-5661675622272159"
