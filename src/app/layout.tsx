@@ -26,9 +26,10 @@ const righteous = Righteous({
 export const metadata: Metadata = {
   title: {
     default: "0xJerry's Lab - Cybersecurity Research & HTB Writeups",
-    template: "%s | 0xJerry's Lab"
+    template: "%s | 0xJerry's Lab",
   },
-  description: "Expert cybersecurity research, penetration testing tutorials, and detailed Hack The Box writeups. Learn offensive security techniques, exploit development, and ethical hacking with 0xJerry's comprehensive guides.",
+  description:
+    "Expert cybersecurity research, penetration testing tutorials, and detailed Hack The Box writeups. Learn offensive security techniques, exploit development, and ethical hacking with 0xJerry's comprehensive guides.",
   keywords: [
     "cybersecurity",
     "penetration testing",
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     "security research",
     "bug bounty",
     "reverse engineering",
-    "malware analysis"
+    "malware analysis",
   ],
   authors: [{ name: "0xJerry", url: "https://0xjerry.jerome.co.in" }],
   creator: "0xJerry",
@@ -55,9 +56,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   openGraph: {
@@ -65,7 +66,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://0xjerry.is-a.dev",
     title: "0xJerry's Lab - Cybersecurity Research & HTB Writeups",
-    description: "Expert cybersecurity research, penetration testing tutorials, and detailed Hack The Box writeups. Learn offensive security with comprehensive guides.",
+    description:
+      "Expert cybersecurity research, penetration testing tutorials, and detailed Hack The Box writeups. Learn offensive security with comprehensive guides.",
     siteName: "0xJerry's Lab",
     images: [
       {
@@ -79,7 +81,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "0xJerry's Lab - Cybersecurity Research & HTB Writeups",
-    description: "Expert cybersecurity research, penetration testing tutorials, and detailed Hack The Box writeups.",
+    description:
+      "Expert cybersecurity research, penetration testing tutorials, and detailed Hack The Box writeups.",
     images: ["https://files.jerome.co.in/0xjerry.jpeg"],
     creator: "@0xJerry",
   },
@@ -97,9 +100,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <head>
@@ -108,25 +109,64 @@ export default function RootLayout({
       <body
         className={`${orbitron.variable} ${firaCode.variable} ${righteous.variable} antialiased min-h-screen flex flex-col`}
       >
-        {/* Global theme-aware animated background */}
+        {/* Neural Aurora Background */}
         <NeuralAuroraBackground density={0.24} speed={0.9} trailAlpha={0.07} />
-        {/* Google AdSense Script */}
+
+        {/* Google AdSense global script */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5661675622272159"
           crossOrigin="anonymous"
           strategy="lazyOnload"
         />
-        {/* Umami Analytics */}
-<Script
-  src="https://cloud.umami.is/script.js"
-  data-website-id="f6696075-8457-4c24-b1f4-32665790a4d0"
-  data-domains="0xjerry.jerome.co.in"
-  strategy="afterInteractive"
-/>
-        
-        
-        {/* Ko-fi Widget */}
+
+        {/* === Display Ad (Auto Responsive) === */}
+        <div className="my-6 mx-auto w-full flex justify-center">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-5661675622272159"
+            data-ad-slot="2973753515"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+          <Script
+            id="adsbygoogle-display-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `(adsbygoogle = window.adsbygoogle || []).push({});`,
+            }}
+          />
+        </div>
+
+        {/* === In-Article Ad (Fluid Format) === */}
+        <div className="my-6 mx-auto w-full flex justify-center">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block", textAlign: "center" }}
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client="ca-pub-5661675622272159"
+            data-ad-slot="5832685293"
+          ></ins>
+          <Script
+            id="adsbygoogle-article-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `(adsbygoogle = window.adsbygoogle || []).push({});`,
+            }}
+          />
+        </div>
+
+        {/* Analytics - Umami */}
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id="f6696075-8457-4c24-b1f4-32665790a4d0"
+          data-domains="0xjerry.jerome.co.in"
+          strategy="afterInteractive"
+        />
+
+        {/* Ko-fi Floating Widget */}
         <Script
           id="kofi-widget"
           strategy="afterInteractive"
@@ -149,10 +189,10 @@ export default function RootLayout({
                 };
                 document.head.appendChild(script);
               })();
-            `
+            `,
           }}
         />
-        
+
         <RootLayoutContent>{children}</RootLayoutContent>
       </body>
     </html>
